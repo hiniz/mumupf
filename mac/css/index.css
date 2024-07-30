@@ -148,6 +148,17 @@ section {
     transition: opacity 1s ease-in-out;
 }
 
+.recommend-carousel {
+    position: relative;
+    overflow: hidden;
+    height: 980px;
+}
+
+.recommend-container {
+    width: 100%;
+    display: flex;
+}
+
 .recommend-main {
     height: 980px;
     display: flex;
@@ -155,7 +166,7 @@ section {
     justify-content: center;
     align-items: center;
     font-size: 100px;
-    font-weight: bold;
+    font-weight: bolder;
     gap: 30px;
 }
 
@@ -165,21 +176,25 @@ section {
 
 .recommend-content {
     position: relative;
+    height: 980px;
 }
 
 .recommend-color {
-    max-width: 1300px;
+    width: 1400px;
     position: absolute;
-    /* left: 0; */
-    z-index: -3;
+    top: 6%;
+    left: 0;
 }
 
 .recommend-contents {
+    height: 1248px;
     display: flex;
     flex-direction: column;
     text-align: end;
     position: absolute;
-    /* right: 0; */
+    top: 50%;
+    right: 20px;
+
 }
 .recommend-contents p {
     font-size: 50px;
@@ -188,4 +203,48 @@ section {
 .recommend-contents h2 {
     font-size: 200px;
     font-weight: bold;
+}
+
+.recommend-button {
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    transform: translateY(-50%);
+    background-color: #E8E8E8;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.recommend-button.prev {
+    left: 10px;
+}
+
+.recommend-button.next {
+    right: 10px;
+}
+
+.recommend-button.hidden {
+    display: none;
+}
+
+.recommend-indicators {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+
+.indicator {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #e8e8e8;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.indicator.active {
+    background-color: #333;
 }
