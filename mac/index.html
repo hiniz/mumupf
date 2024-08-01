@@ -1,75 +1,136 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MAC portfolio</title>
+    <title>Document</title>
     <link rel="stylesheet" href="../mac/css/reset.css">
     <link rel="stylesheet" href="../mac/css/index.css">
 </head>
 <body>
     <header>
-        <div class="header-container">
-            <div class="logobox"><img src="../mac/img/blackLogo.png" alt="logo"></div>
+         <div class="header-container">
+            <figure class="logo"><img src="../mac/img/logoblack.png" alt="logo"></figure>
+
             <nav class="header-menu">
                 <a href="#" class="menu">Cosmetics</a>
                 <a href="#" class="menu">Service</a>
                 <a href="#" class="menu">Benefits</a>
-                <a href="#" class="menu">About Us</a>
+                <a href="#" class="menu">About us</a>
             </nav>
-            <div class="header-right">
-                <div class="search-icon"><img src="../mac/img/searchIcon.png" alt="search"></div>
-                <button class="login line-button">Login</button>
+
+            <div class="login-box">
+                <figure class="search-icon"><img src="../mac/img/search.png" alt="search"></figure>
+                <button class="line-button login">Login</button>
             </div>
-        </div>
+         </div>
     </header>
 
-    <section id="main">
-        <video src="../mac/img/mainVideo.mp4" autoplay loop muted></video>
-    </section>
+    <main>
+        <div class="main-container">
+            <figure class="main-glowplay-img"><img src="../mac/img/mainText.png" alt="maintext"></figure>
+            <div class="moving-main-container">
+                <figure class="moving-img"><img src="../mac/img/main1.png" alt="main"></figure>
+                <figure class="moving-img"><img src="../mac/img/main2.png" alt="main"></figure>
+                <figure class="moving-img"><img src="../mac/img/main3.png" alt="main"></figure>
+                <figure class="moving-img"><img src="../mac/img/main4.png" alt="main"></figure>
+                <figure class="moving-img"><img src="../mac/img/main5.png" alt="main"></figure>
+                <figure class="moving-img"><img src="../mac/img/main6.png" alt="main"></figure>
+                <figure class="moving-img"><img src="../mac/img/main1.png" alt="main"></figure>
+            </div>
+        </div>
+    </main>
 
-    <section id="glowplay">
-
+    <section id="glowplay-section">
         <div class="glowplay-container">
-
-            <div class="glowplay-work">
-                <div class="glowplay-img">
-                    <img src="../mac/img/glowLip.jpg" alt="glowlip">
-                </div>
+            <div class="glowplay">
+                <figure class="glowplay-img"><img src="../mac/img/glowLip.png" alt="glowLip"></figure>
                 <div class="glowplay-contents">
-                    <p>new</p>
+                    <p>NEW</p>
                     <div class="glowplay-title">
                         <h2>글로우 플레이 텐더토크 립 밤</h2>
-                        <p>싱그러운 애플 레드부터 카라멜 누드까지! <br>
-                            남녀노소 누구나 어울리는 7가지 다채롭고 플레이풀한 컬러의 립밤 </p>
+                        <h4>싱그러운 애플 레드부터 카라멜 누드까지! <br>
+                            남녀노소 누구나 어울리는 7가지 다채롭고 플레이풀한 컬러의 립밤</h4>
                     </div>
-                    <button class="line-button">
-                        read more
-                    </button>
+                    <button class="line-button glow-button">add to cart</button>
                 </div>
             </div>
-
-            <div class="glowplay-work">
-                <div class="glowplay-img">
-                    <img src="../mac/img/glowBlush.jpg" alt="glowlip">
-                </div>
+            <div class="glowplay">
+                <figure class="glowplay-img"><img src="../mac/img/glowBlush.png" alt="glowBlush"></figure>
                 <div class="glowplay-contents">
-                    <p>new</p>
+                    <p>NEW</p>
                     <div class="glowplay-title">
-                        <h2>글로우 플레이 텐더토크 립 밤</h2>
-                        <p>싱그러운 애플 레드부터 카라멜 누드까지! <br>
-                            남녀노소 누구나 어울리는 7가지 다채롭고 플레이풀한 컬러의 립밤 </p>
+                        <h2>글로우 플레이 쿠션 블러쉬</h2>
+                        <h4>마시멜로처럼 자꾸만 만지고 싶은 부드럽고 <br>
+                            폭신한 바운드 플레이 텍스처의 쿠션 블러쉬</h4>
                     </div>
-                    <button class="line-button">
-                        read more
-                    </button>
+                    <button class="line-button glow-button">add to cart</button>
                 </div>
             </div>
         </div>
-        </section>
+    </section>
+
+    <section id="bestseller">
+        <div class="bestseller-container">
+            <h2>The Bestseller</h2>
+            <nav class="bestseller-categories">
+                <button class="bestseller-category" data-tab="lip">Lip</button>
+                <button class="bestseller-category" data-tab="eye">Eye</button>
+                <button class="bestseller-category" data-tab="face">Face</button>
+                <button class="bestseller-category" data-tab="skincare">Skincare</button>
+            </nav>
 
 
-
-        <script src="../mac/js/carousel.js"></script>
+            
+            <div class="bestseller-container active" id="lip">
+                <div class="bestseller-contents">
+                    <div class="bestseller-content">
+                        <div class="bestseller-img">
+                            <img src="../mac/img/powderkiss.png" alt="powderkiss" id="before-bestseller-img">
+                            <img src="../mac/img/powderkissHover.png" alt="powderkissHover" id="after-bestseller-img">
+                        </div>
+                        <div class="bestseller-name">
+                            <p>POWDER KISS LIPSTICK</p>
+                            <P>₩ 43,000</P>
+                        </div>
+                        <button class="line-button bestseller-button">add to cart</button>
+                    </div>
+                    <div class="bestseller-content">
+                        <div class="bestseller-img">
+                            <img src="../mac/img/lusterglass.png" alt="lusterglass" id="before-bestseller-img">
+                            <img src="../mac/img/lusterglassHover.png" alt="lusterglassHover" id="after-bestseller-img">
+                        </div>
+                        <div class="bestseller-name">
+                            <p>LUSTERGLASS LIPSTICK</p>
+                            <P>₩ 43,000</P>
+                        </div>
+                        <button class="line-button bestseller-button">add to cart</button>
+                    </div>
+                    <div class="bestseller-content">
+                        <div class="bestseller-img">
+                            <img src="../mac/img/macximal.png" alt="macximal" id="before-bestseller-img">
+                            <img src="../mac/img/macximalHover.png" alt="macximalHover" id="after-bestseller-img">
+                        </div>
+                        <div class="bestseller-name">
+                            <p>MACXIMAL SILKY MATTE LIPSTICK</p>
+                            <P>₩ 39,000</P>
+                        </div>
+                        <button class="line-button bestseller-button">add to cart</button>
+                    </div>
+                    <div class="bestseller-content">
+                        <div class="bestseller-img">
+                            <img src="../mac/img/powderliquid.png" alt="powderliquid" id="before-bestseller-img">
+                            <img src="../mac/img/powderliquidHover.png" alt="powderliquidHover" id="after-bestseller-img">
+                        </div>
+                        <div class="bestseller-name">
+                            <p>POWDER KISS LIQUID LIPCOLOUR</p>
+                            <P>₩ 49,000</P>
+                        </div>
+                        <button class="line-button bestseller-button">add to cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
 </html>
