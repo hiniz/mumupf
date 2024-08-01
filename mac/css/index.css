@@ -190,10 +190,19 @@ main {
     margin-bottom: 30px;
 }
 
-.bestseller-categories button {
+.bestseller-category {
     font-size: 32px;
     font-weight: 100;
     color: #bbb;
+    cursor: pointer;
+}
+
+.bestseller-contents-container {
+    display: none;
+}
+
+.bestseller-contents-container.active {
+    display: block;
 }
 
 .bestseller-contents {
@@ -208,8 +217,24 @@ main {
 }
 
 .bestseller-img {
+    width: 100%;
+    aspect-ratio: 1;
     border: 1px solid #222;
     margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.bestseller-img img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.3s ease;
+    object-fit: cover;
+}
+
+#after-bestseller-img {
+    opacity: 0;
 }
 
 .bestseller-name {
