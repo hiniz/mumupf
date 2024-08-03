@@ -1,167 +1,86 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hover to Reveal Text</title>
-    <style>
-/* styles.css */
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f0f0f0;
-}
-
-.carousel {
-    position: relative;
-    width: 80%;
-    max-width: 600px;
-    overflow: hidden;
-    border: 2px solid #ccc;
-    border-radius: 10px;
-    background-color: #fff;
-}
-
-.carousel-container {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.carousel-slide {
-    min-width: 100%;
-    box-sizing: border-box;
-    padding: 20px;
-    text-align: center;
-    font-size: 1.5em;
-}
-
-.carousel-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    z-index: 10;
-}
-
-.carousel-button.prev {
-    left: 10px;
-}
-
-.carousel-button.next {
-    right: 10px;
-}
-
-.carousel-button.hidden {
-    display: none;
-}
-
-.carousel-indicators {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-}
-
-.indicator {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: #bbb;
-    margin: 0 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.indicator.active {
-    background-color: #333;
-}
-
-
-
-    </style>
-</head>
-<body>
-    <div class="carousel">
-        <button class="carousel-button prev">Previous</button>
-        <div class="carousel-container">
-            <div class="carousel-slide">Slide 1</div>
-            <div class="carousel-slide">Slide 2</div>
-            <div class="carousel-slide">Slide 3</div>
+<div class="gallery-timeline">
+    <div class="gallery">
+        <div class="gallery-item">
+            <figure class="gallery-photo">
+                <img src="images/photo/photo01.jpg" alt="">
+            </figure>
         </div>
-
-        <div class="carousel-indicators">
-            <span class="indicator active"></span>
-            <span class="indicator"></span>
-            <span class="indicator"></span>
+        <div class="gallery-item">
+            <figure class="gallery-photo">
+                <img src="images/photo/photo02.jpg" alt="">
+            </figure>
         </div>
-        
-        <button class="carousel-button next">Next</button>
+        <div class="gallery-item">
+            <figure class="gallery-photo">
+                <img src="images/photo/photo03.jpg" alt="">
+            </figure>
+        </div>
+        <div class="gallery-item">
+            <figure class="gallery-photo">
+                <img src="images/photo/photo04.jpg" alt="">
+            </figure>
+        </div>
+        <div class="gallery-item">
+            <figure class="gallery-photo">
+                <img src="images/photo/photo05.jpg" alt="">
+            </figure>
+        </div>
     </div>
-</body>
-</html>
+</div>
+
+body {
+background: dodgerblue;
+}
+
+.para {
+padding: 1em;
+font-size: 50px;
+}
+
+.wrap {
+/* 가로스크롤 제거 */
+contain:paint;
+}
+
+.gallery {
+display: flex;
+align-items: center;
+position:sticky;
+top:0;
+width:350vw;
+max-width:4000px;
+height:100vh;
+border:10px dashed deeppink;
+}
+
+.gallery-item {
+width:70vw;
+max-width: 800px;
+/* 부모가 플레스일때 안쪼그라들게 설정 */
+flex-shrink:0;
+}
+.gallery-timeline {
+height: 2000px;
+border:10px dashed MediumAquaMarine;
+}
+import './scroll-timeline.js';
+
+const gallery = document.querySelector('.gallery');
+const galleryTimeline = document.querySelector('.gallery-timeline');
 
 
-    <script>
-// script.js
-document.addEventListener('DOMContentLoaded', () => {
-    const slides = document.querySelectorAll('.carousel-slide');
-    const prevButton = document.querySelector('.carousel-button.prev');
-    const nextButton = document.querySelector('.carousel-button.next');
-    const indicators = document.querySelectorAll('.indicator');
-    const carouselContainer = document.querySelector('.carousel-container');
-    let currentIndex = 0;
-
-    function showSlide(index) {
-        const slideWidth = slides[0].clientWidth;
-        carouselContainer.style.transform = `translateX(${-index * slideWidth}px)`;
-        updateIndicators(index);
-        updateButtons(index);
-    }
-
-    function updateIndicators(index) {
-        indicators.forEach((indicator, i) => {
-            indicator.classList.toggle('active', i === index);
-        });
-    }
-
-    function updateButtons(index) {
-        prevButton.classList.toggle('hidden', index === 0);
-        nextButton.classList.toggle('hidden', index === slides.length - 1);
-    }
-
-    prevButton.addEventListener('click', () => {
-        if (currentIndex > 0) {
-            currentIndex--;
-            showSlide(currentIndex);
-        }
-    });
-
-    nextButton.addEventListener('click', () => {
-        if (currentIndex < slides.length - 1) {
-            currentIndex++;
-            showSlide(currentIndex);
-        }
-    });
-
-    indicators.forEach((indicator, i) => {
-        indicator.addEventListener('click', () => {
-            currentIndex = i;
-            showSlide(currentIndex);
-        });
-    });
-
-    showSlide(currentIndex);
-});
-
-
-    </script>
-</body>
-</html>
+gallery.animate(
+[
+{transform:'translateX(0)'},
+{transform:'translateX(calc(-100% + 100vw))'}
+],
+{
+fill:'both',
+timeline:new ScrollTimeline({
+scrollOffsets:[
+{target:galleryTimeline, edge:'start', threshold:1},
+{target:galleryTimeline, edge:'end', threshold:1}
+]
+})
+}
+)
