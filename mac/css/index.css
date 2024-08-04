@@ -26,24 +26,40 @@ button {
     padding: 6px 16px;
     box-sizing: border-box;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* 헤더 */
 header {
     width: 100%;
     height: 80px;
-    padding: 20px 100px;
+    padding: 0 100px;
     box-sizing: border-box;
     position: fixed;
     top: 0;
     z-index: 10;
     background-color: #ffffff;
+    transition: opacity 0.7s ease-in-out;
+    display: flex;
+    align-content: center;
+}
+
+header.hidden {
+    opacity: 0;
 }
 
 .header-container {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.mobile-menu {
+    display: none;
+    cursor: pointer;
 }
 
 .logo {
@@ -72,6 +88,8 @@ header {
     border: 1px solid #222;
     border-radius: 2px;
 }
+
+
 
 /* main */
 
@@ -172,8 +190,9 @@ main {
 #bestseller {
     max-width: 1720px;
     margin: 0 auto;
-    padding: 50px 100px;
+    padding: 50px 0;
     box-sizing: border-box;
+
 }
 
 .bestseller-container {
@@ -206,19 +225,24 @@ main {
 }
 
 .bestseller-contents-container.active {
-    display: block;
+    width: 100%;
+    display: flex;
+    gap: 20px;
 }
 
 .bestseller-contents {
     width: 100%;
     display: flex;
-    gap: 38px;
+    gap: 20px;
+    height: 660px;
 }
 
 .bestseller-content {
-    width: calc((100%-200) / 4);
+    width: calc((100% - 20px )/ 4);
+    height: 100%;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 .bestseller-img {
@@ -241,6 +265,7 @@ main {
 #after-bestseller-img {
     opacity: 0;
 }
+
 
 .bestseller-name {
     display: flex;
@@ -340,7 +365,6 @@ main {
     display: flex;
     align-items: end;
     gap: 20px;
-
 }
 
 .trend-category-img {
@@ -430,7 +454,6 @@ main {
     overflow: hidden;
 }
 
-
 .campaign-container {
     display: flex;
     flex-direction: column;
@@ -438,24 +461,22 @@ main {
     align-content: center;
     gap: 100px;
 
-    position: relative;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    transition: 0.5s;
-
 }
 
-.campaign-page {
+.campaign-page, .count-page {
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-content: center;
+    opacity: 0;
     gap: 40px;
+    transition: transform 2s, opacity 3s;
+}
 
-    width: 100%;
-    height: 100%;
-
+.visible {
+    transform: translateY(0);
+    opacity: 1;
 }
 
 .campaign-page h2 {
@@ -465,14 +486,13 @@ main {
 }
 
 .campaign-page p {
-    font-size: 18px;
     line-height: 120%;
 }
 
 .count-page {
     display: flex;
     flex-direction: column;
-    gap: 100px;
+    gap: 200px;
 }
 
 .count-page p {
@@ -498,9 +518,6 @@ main {
     width: calc(100%/3);
     display: felx;
     justify-content: center;
-}
-
-.vivaglam-img{
     position: relative;
 }
 
@@ -512,17 +529,15 @@ main {
 }
 
 .vivaglam-contents {
-    font-size: 18px;
+    font-size: 24px;
     display: flex;
     flex-direction: column;
     text-align: center;
     align-items: center;
+    justify-content: center;
     gap: 30px;
     color: #fff;
-
-    
     background-color: #00000080;
-
     position: absolute;
     opacity: 0;
     width: 100%;
@@ -534,12 +549,12 @@ main {
 
 .vivaglam-button {
     width: 200px;
-    height: 30px;
-    border: #fff;
+    height: 40px;
+    border: 1px solid #fff;
     color: #fff;
 }
 
-.vivaglam:hover img {
+.vivaglam:hover .vivaglam-img img {
     filter : brightness(50%)
 }
 
@@ -548,17 +563,16 @@ main {
 }
 
 footer {
-    padding: 16px 0;
+    padding: 32px 50px;
     box-sizing: border-box;
     background-color: #111;
     width: 100%;
-    height: 600px;
     display: flex;
     justify-content: center;
 }
 
 .footer-container {
-    width: 1800px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -566,7 +580,7 @@ footer {
 }
 
 .footer-line {
-    width: 1800px;
+    width: 100%;
     height: 1px;
     background-color: #d9d9d9;
 }
@@ -635,4 +649,145 @@ footer {
 
 .moretag > a {
     color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        padding: 0 32px;
+        box-sizing: border-box;
+    }
+
+    .header-menu {
+        display: none;
+    }
+
+    .login-box {
+        display: none;
+    }
+
+    .mobile-menu {
+        display: block;
+        width: 80px;
+        height: 80px;
+    }
+
+    .main-glowplay-img {
+        top: 40%;
+        left: 0;
+    }
+
+    #glowplay-section {
+        padding: 0;
+    }
+
+    .glowplay-container{
+        flex-wrap: wrap;
+    }
+
+    .glowplay {
+        width: 100%;
+    }
+
+    .glowplay-contents {
+        top: 50%;
+        left: 17%;
+    }
+
+    .bestseller-contents {
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .bestseller-content {
+        width: calc((100% - 20px) / 2);
+        height: 100%;
+    }
+
+    #mactrend {
+        padding: 60px 32px ;
+    }
+ 
+    .trend-container {
+        width: 100%;
+    }
+
+    .trend-title h4 {
+        font-size: 18px;
+    }
+
+    .trend-title h2 {
+        font-size: 100px;
+    }
+
+    .trend-contents-container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .trend-products-container {
+        width: 100%;
+    }
+
+    .trend-category-container {
+        width: 100%;
+        height: 50%;
+    }
+
+    .trend-category-contents h2 {
+        font-size: 20px;
+    }
+
+    /* 캐러셀 */
+    #campaign {
+        padding: 60px 32px;
+    }
+
+    .campaign-page {
+        gap: 20px;
+    }
+
+    .campaign-page h2 {
+        font-size: 50px;
+    }
+
+    .count-page p {
+        font-size: 44px;
+    }
+
+    .vivaglam {
+        width: calc(100% /2);
+    }
+
+    .vivaglam-contents {
+        font-size: 18px;
+    }
+
+    footer {
+        padding: 32px;
+        font-size: 14px;
+    }
+
+    .footer-container {
+        gap: 16px;
+    }
+
+    .up-infor {
+        gap: 40px;
+    }
+    
+    .list-line {
+        width: 140px
+    }
+
+    .sns-container {
+        gap: 20px;
+    }
+
+    .under-infor {
+        flex-wrap: wrap;
+    }
+
+    .infor {
+        font-size: 12px;
+    }
 }

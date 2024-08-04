@@ -1,86 +1,93 @@
-<div class="gallery-timeline">
-    <div class="gallery">
-        <div class="gallery-item">
-            <figure class="gallery-photo">
-                <img src="images/photo/photo01.jpg" alt="">
-            </figure>
-        </div>
-        <div class="gallery-item">
-            <figure class="gallery-photo">
-                <img src="images/photo/photo02.jpg" alt="">
-            </figure>
-        </div>
-        <div class="gallery-item">
-            <figure class="gallery-photo">
-                <img src="images/photo/photo03.jpg" alt="">
-            </figure>
-        </div>
-        <div class="gallery-item">
-            <figure class="gallery-photo">
-                <img src="images/photo/photo04.jpg" alt="">
-            </figure>
-        </div>
-        <div class="gallery-item">
-            <figure class="gallery-photo">
-                <img src="images/photo/photo05.jpg" alt="">
-            </figure>
-        </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Header</title>
+<style>
+  body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+  }
+
+  .header h1 {
+    margin: 0;
+  }
+
+  .nav {
+    display: flex;
+    gap: 20px;
+  }
+
+  .nav a {
+    color: white;
+    text-decoration: none;
+  }
+
+
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  .menu-toggle div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+  }
+
+  
+  @media (max-width: 768px) {
+    .nav {
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+      background-color: #333;
+    }
+    .nav.active {
+      display: flex;
+    }
+    .menu-toggle {
+      display: flex;
+    }
+  }
+</style>
+</head>
+<body>
+  <header class="header">
+    <h1>Logo</h1>
+    <nav class="nav" id="nav">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Contact</a>
+    </nav>
+    <div class="menu-toggle" id="menu-toggle">
+      <div></div>
+      <div></div>
+      <div></div>
     </div>
-</div>
+  </header>
 
-body {
-background: dodgerblue;
-}
-
-.para {
-padding: 1em;
-font-size: 50px;
-}
-
-.wrap {
-/* 가로스크롤 제거 */
-contain:paint;
-}
-
-.gallery {
-display: flex;
-align-items: center;
-position:sticky;
-top:0;
-width:350vw;
-max-width:4000px;
-height:100vh;
-border:10px dashed deeppink;
-}
-
-.gallery-item {
-width:70vw;
-max-width: 800px;
-/* 부모가 플레스일때 안쪼그라들게 설정 */
-flex-shrink:0;
-}
-.gallery-timeline {
-height: 2000px;
-border:10px dashed MediumAquaMarine;
-}
-import './scroll-timeline.js';
-
-const gallery = document.querySelector('.gallery');
-const galleryTimeline = document.querySelector('.gallery-timeline');
-
-
-gallery.animate(
-[
-{transform:'translateX(0)'},
-{transform:'translateX(calc(-100% + 100vw))'}
-],
-{
-fill:'both',
-timeline:new ScrollTimeline({
-scrollOffsets:[
-{target:galleryTimeline, edge:'start', threshold:1},
-{target:galleryTimeline, edge:'end', threshold:1}
-]
-})
-}
-)
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const nav = document.getElementById('nav');
+  
+  menuToggle.addEventListener('click', () => {
+    nav.classList.toggle('active');
+  });
+</script>
+</body>
+</html>
