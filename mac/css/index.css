@@ -304,6 +304,7 @@ main {
     display: flex;
     gap: 20px;
     margin-top: 30px;
+    align-items: center;
 }
 
 .trend-products-container{
@@ -789,5 +790,69 @@ footer {
 
     .infor {
         font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    header {
+        width: 100%;
+        padding: 0 16px;
+        height: 60px;
+    }
+
+    .logo {
+        width: 100px;
+    }
+
+    .mobile-menu {
+        width: 70px;
+    }
+
+    main {
+        height: 100%;
+    }
+
+    .main-glowplay-img {
+        width: 100%;
+        top: 37%;
+    }
+
+    .moving-main-container {
+        width: 4000px;
+    }
+
+    .moving-img {
+        width: 600px;
+        height: 700px;
+    }
+
+    .glowplay-contents {
+        width: 80%;
+        top: 15%;
+        left: 10%;
+    }
+
+    .glowplay-title h2{
+        font-size: 22px;
+    }
+
+    .glowplay-title h4 {
+        font-size: 16px;
+    }
+
+    .glow-button {
+        height: 40px;
+    }
+
+    .bestseller-container h2 {
+        font-size: 36px;
+    }
+
+    .bestseller-categories {
+        gap: 10px;
+    }
+
+    .bestseller-category {
+        font-size: 24px;
     }
 }
