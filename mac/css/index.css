@@ -234,12 +234,12 @@ main {
     width: 100%;
     display: flex;
     gap: 20px;
-    height: 660px;
+    
 }
 
 .bestseller-content {
     width: calc((100% - 20px )/ 4);
-    height: 100%;
+    height: 660px;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -404,7 +404,6 @@ main {
     padding: 0;
 }
 
-
 .viva-carousel {
     display: flex;
     gap: 20px;
@@ -413,7 +412,7 @@ main {
 }
 
 .viva-products {
-    width: 400px;
+    width: calc(100%/3.5);
     height: 660px;
     border: 1px solid #222;
     padding: 16px;
@@ -422,17 +421,19 @@ main {
 }
 
 .viva-video {
-    width: 400px;
+    width: 550px;
     height: 660px;
 }
 
 .viva-video video {
     width: 100%;
+    flex-shrink: 0;
 }
 
 .viva-products-img {
     margin-bottom: 50px;
 }
+
 .viva-product-ex {
     display: flex;
     flex-direction: column;
@@ -441,7 +442,7 @@ main {
 }
 
 .viva-button {
-    width: 330px;
+    width: 90%;
     height: 50px;
     position: absolute;
     bottom: 16px;
@@ -632,6 +633,7 @@ footer {
     width: 100%;
     display: flex;
     gap: 20px;
+    font-size: 10px;
 }
 
 .infor {
@@ -701,7 +703,6 @@ footer {
 
     .bestseller-content {
         width: calc((100% - 20px) / 2);
-        height: 100%;
     }
 
     #mactrend {
@@ -739,6 +740,35 @@ footer {
     }
 
     /* 캐러셀 */
+
+    #viva-carousel {
+        padding-left: 16px;
+    }
+
+    .viva-carousel {
+        width: 200%;
+    }
+
+    .viva-video {
+        flex-shrink: 0;
+        width: 334px;
+        height: 600px;
+    }
+
+    .viva-video video {
+        width: 100%;
+        height: 100%;
+    }
+
+    .viva-products {
+        width: calc(100%/2);
+        height: 600px;
+    }
+
+    .viva-button {
+        width: 90%;
+    }
+
     #campaign {
         padding: 60px 32px;
     }
@@ -793,7 +823,7 @@ footer {
     }
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 700px) {
     header {
         width: 100%;
         padding: 0 16px;
@@ -844,6 +874,10 @@ footer {
         height: 40px;
     }
 
+    #bestseller {
+        padding: 50px 16px;
+    }
+
     .bestseller-container h2 {
         font-size: 36px;
     }
@@ -855,4 +889,127 @@ footer {
     .bestseller-category {
         font-size: 24px;
     }
+
+    .bestseller-content {
+        width: 100%;
+    }
+
+    #mactrend {
+        padding: 0 16px;
+    }
+
+    .trend-title h2 {
+        font-size: 48px;
+    }
+
+    .trend-product {
+        padding: 16px;
+        height: 600px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .trend-product-img {
+        flex-shrink: 0;
+        width: 100%;
+        height: auto;
+    }
+
+    .trend-product-name {
+        font-size: 16px;
+    }
+
+    .trend-button {
+        width: 90%;
+    }
+
+    .trend-category-container {
+        flex-direction: column;
+        padding: 16px;
+        align-items: center;
+        height: 550px;
+    }
+
+    .trend-category-img {
+        width: 100%;
+    }
+
+    #viva-carousel {
+        margin-top: 32px;
+    }
+
+    .viva-video {
+        width: 100%;
+    }
+
+    .trend-products {
+        width: 100%;
+    }
+
+    .viva-products-img img {
+        flex-shrink: 0;
+    }
+
+    /* ㅈ같은캐러셀 */
+
+    #campaign {
+        padding: 32px 16px;
+    }
+
+    .campaign-page h2 {
+        font-size: 24px;
+    }
+
+    .campaign-page p {
+        font-size: 14px;
+    }
+
+    .count-page p{
+        font-size: 24px;
+    }
+
+    .vivaglam-contents {
+        font-size: 14px;
+    }
+
+    .vivaglam-button {
+        width: 90%;
+        font-size: 14px;
+        height: 25px;
+    }
+
+    footer {
+        padding: 16px;
+    }
+
+    .up-infor {
+        flex-wrap: wrap;
+    }
+
+    .footer-list {
+        font-size: 14px;
+    }
+
+    .infor {
+        font-size: 12px;
+    }
+
+    .copyright {
+        font-size: 12px;
+    }
+
+    .moretag a {
+        font-size: 12px;
+    }
+
+    .sns-container {
+        gap: 12px;
+    }
+
+    .sns-container a img {
+        width: 26px;
+        height: 26px;
+    }
 }
+
+/* https://swiperjs.com/swiper-api */
