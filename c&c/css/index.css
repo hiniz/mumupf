@@ -1,0 +1,94 @@
+@font-face {
+    font-family: 'GowunBatang-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunBatang-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+    font-family: GowunBatang-Regular;
+    background-color: gray;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 5;
+}
+
+.header-container {
+    padding: 0 100px;
+}
+
+.logo-container {
+    font-size: 30px;
+    color: #EDE8E2;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.categories {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.category a {
+    font-size: 20px;
+    color: #EDE8E2;
+}
+
+.user-menu-list {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 6px;
+}
+
+main {
+    width: 100vw;
+    cursor: url('../img/cursor.png'), auto;
+    position: relative;
+}
+
+.main-logo {
+    z-index: 3;
+    width: 140px;
+    height: 200px;
+    position: absolute;
+    top: 38%;
+    left: 47.5%;
+}
+.carousel-container {
+    width: 100vw;
+    overflow: hidden;
+}
+
+.slide-wrapper {
+    width: 100%;
+}
+
+.slides {
+    display: flex;
+}
+
+.slide {
+    flex-shrink: 0; 
+}

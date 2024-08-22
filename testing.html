@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centered Image with Overlapping Elements</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* 전체 화면을 차지하도록 설정 */
+/* 기본적인 문서 설정 */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden; /* 스크롤바를 없애는 선택 사항 */
+}
+
+/* 콘텐츠 스타일 */
+.content {
+    position: relative; /* 기본 문서 흐름을 유지 */
+    z-index: 10; /* 이미지보다 위에 오도록 설정 */
+    text-align: center; /* 선택 사항 */
+    color: white; /* 배경과의 대비를 위한 색상 설정 */
+}
+
+/* 이미지 래퍼 스타일 */
+.image-wrapper {
+    position: fixed; /* 화면 전체를 덮기 위해 고정 위치 지정 */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 100vh;
+    z-index: 1; /* 콘텐츠보다 뒤에 위치하도록 설정 */
+    pointer-events: none; /* 클릭 이벤트를 무시하여 콘텐츠와의 상호작용을 방지 */
+}
+
+/* 이미지 스타일 */
+img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover; /* 이미지 비율을 유지하면서 컨테이너에 맞게 조정 */
+}
+
+
+/* 이미지 스타일 */
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>Other Content</h1>
+        <p>This is some content that should appear above the image.</p>
+    </div>
+    <div class="image-wrapper">
+        <img src="mainLogo.png" alt="Centered Image">
+    </div>
+</body>
+</html>
