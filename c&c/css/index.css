@@ -12,11 +12,21 @@ html {
 
 a {
     text-decoration: none;
+    color: #222;
 }
 
 img {
     width: 100%;
     display: block;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    padding: 6px 16px;
+    box-sizing: border-box;
+    cursor: pointer;
+    color: #222;
 }
 
 header {
@@ -207,11 +217,15 @@ main {
 .daily-set-contents {
     display: flex;
     gap: 40px;
-
 }
 
 .daily-set-content {
     width: calc((100% - 100px) / 3.8);
+    font-size: 18px;
+}
+
+.daily-img {
+    margin-bottom: 8px;
 }
 
 #our-slogan {
@@ -245,25 +259,136 @@ main {
 }
 
 .slogan-slider {
-    width: 100%;
+    width: 4780px;
     display: flex;
     gap: 80px;
-    animation: slide 5s linear infinite;
+    animation: slide 4s linear infinite;
 
 }
 
 .slogan-slide {
-    width: calc(100% / 4);
+    width: 476px;
     flex-shrink: 0;
     border-radius: 2px;
 }
 
-/* @keyframes slide {
+@keyframes slide {
     from {
-        transform: translateX(80px);
+        transform: translateX(0);
     }
 
     to {
-        transform: translateX(-100%);
+        transform: translateX(-2780px);
     }
-} */
+}
+
+#review {
+    width: 100%;
+    height: 1080px;
+    padding: 0 100px;
+    box-sizing: border-box;
+}
+
+.review-contents {
+    display: flex;
+    gap: 40px;
+}
+
+.review-content {
+    width: calc((100% - 200px) / 5);
+    position: relative;
+}
+
+.review-img img {
+    border-radius: 2px;
+}
+
+.review {
+    width: 100%;
+    height: 60px;
+    background-color: #ead5c4;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2px;
+    padding: 11px;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: -30px;
+}
+
+.review p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.review-up {
+    margin-bottom: 70px;
+}
+
+.review-down {
+    justify-content: end;
+}
+
+#footer {
+    width: 100%;
+}
+
+.footer-container {
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding-bottom: 200px;
+}
+
+.footer-logo {
+    width: 75px;
+}
+
+.footer-menu {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+}
+
+.line-button {
+    border: 1px solid #675553;
+    height: 35px;
+    border-radius: 20px;
+    color: #675553;
+    cursor: pointer;
+}
+
+.more-info-button {
+    display: flex;
+    flex-direction: column;
+}
+
+.more-arrow {
+    width: 20px;
+}
+
+.more-info {
+    color: #675553;
+    text-align: center;
+    margin: 40px 0;
+}
+
+.more-info p {
+    margin-bottom: 16px;
+}
+
+.more-info.hidden {
+    display: none;
+}
+
+.sns-box {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
