@@ -93,6 +93,10 @@ main {
     flex-shrink: 0; 
 }
 
+.slide a {
+    cursor: url(../img/cursorBrown.png), auto
+}
+
 #collection {
     padding: 100px;
     box-sizing: border-box;
@@ -143,19 +147,19 @@ main {
     overflow: hidden;
 }
 
-.bestseller-title {
+.section-title {
     display: flex;
     gap: 40px;
     align-items: end;
     margin-bottom: 40px;
 }
 
-.bestseller-title h2 {
+.section-title h2 {
     font-size: 32px;
     font-weight: bold;
 }
 
-.bestseller-title p {
+.section-title p {
     font-size: 20px;
 }
 
@@ -188,3 +192,78 @@ main {
     justify-content: space-between;
     font-size: 18px;
 }
+
+#daily-set {
+    width: 100%;
+    height: 1080px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 50px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.daily-set-contents {
+    display: flex;
+    gap: 40px;
+
+}
+
+.daily-set-content {
+    width: calc((100% - 100px) / 3.8);
+}
+
+#our-slogan {
+    width: 100%;
+    height: 1080px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.slogan {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.slogan h2 {
+    font-size: 36px;
+}
+
+.slogan p {
+    font-size: 24px;
+}
+
+.slogan-slide-wrapper {
+    width: 100%;
+    overflow: hidden;
+}
+
+.slogan-slider {
+    width: 100%;
+    display: flex;
+    gap: 80px;
+    animation: slide 5s linear infinite;
+
+}
+
+.slogan-slide {
+    width: calc(100% / 4);
+    flex-shrink: 0;
+    border-radius: 2px;
+}
+
+/* @keyframes slide {
+    from {
+        transform: translateX(80px);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+} */

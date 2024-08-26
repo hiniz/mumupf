@@ -90,10 +90,13 @@
 document.querySelectorAll('.slide-wrapper').forEach((slideWrapper, index) => {
     let startX = 0;
     let isDragging = false;
+    let moved = false;
+    let clickPrevented = false; 
     const slides = slideWrapper.querySelectorAll('.slide');
     const slideWidth = window.innerWidth; // 슬라이드 하나의 너비를 viewport width로 설정
     const totalWidth = slides.length * slideWidth; // 슬라이드 총 너비 계산
     const resetButton = document.querySelector('.reset-button')
+    const threshold = 5; // 클릭으로 간주되지 않는 최소 이동 거리
 
 
 
@@ -102,6 +105,8 @@ document.querySelectorAll('.slide-wrapper').forEach((slideWrapper, index) => {
         e.preventDefault();
         startX = e.clientX;
         isDragging = true;
+        moved = false;
+        clickPrevented = false;
         slideWrapper.style.transition = 'none';
     });
 
@@ -117,8 +122,14 @@ document.querySelectorAll('.slide-wrapper').forEach((slideWrapper, index) => {
             newTransform = Math.max(newTransform, -totalWidth + slideWidth); // 오른쪽 경계
 
             slideWrapper.style.transform = `translateX(${newTransform}px)`;
-
             startX = e.clientX; // 현재 위치를 업데이트
+
+           
+            if (Math.abs(deltaX) > threshold) {
+                moved = true;
+            }
+
+
         }
     });
 
@@ -137,6 +148,17 @@ document.querySelectorAll('.slide-wrapper').forEach((slideWrapper, index) => {
             // 이동 애니메이션
             slideWrapper.style.transition = 'transform 0.5s ease';
             slideWrapper.style.transform = `translateX(${newTransform}px)`;
+
+            if(moved) {
+                clickPrevented = true;
+            }
+        }
+    });
+
+    slideWrapper.addEventListener('click', function(e) {
+        if (clickPrevented) {
+            e.preventDefault(); // 드래그 후 클릭이 발생하지 않도록 방지
+            clickPrevented = false; // 한 번만 방지하고 초기화
         }
     });
 
