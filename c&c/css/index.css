@@ -262,7 +262,7 @@ main {
     width: 4780px;
     display: flex;
     gap: 80px;
-    animation: slide 4s linear infinite;
+    animation: slide 40s linear infinite;
 
 }
 
