@@ -1,93 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Responsive Header</title>
-<style>
-  body, html {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-  }
-
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #333;
-    color: white;
-  }
-
-  .header h1 {
-    margin: 0;
-  }
-
-  .nav {
-    display: flex;
-    gap: 20px;
-  }
-
-  .nav a {
-    color: white;
-    text-decoration: none;
-  }
-
-
-  .menu-toggle {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-  }
-  .menu-toggle div {
-    width: 25px;
-    height: 3px;
-    background-color: white;
-    margin: 4px 0;
-  }
-
-  
-  @media (max-width: 768px) {
-    .nav {
-      display: none;
-      flex-direction: column;
-      gap: 10px;
-      width: 100%;
-      background-color: #333;
-    }
-    .nav.active {
-      display: flex;
-    }
-    .menu-toggle {
-      display: flex;
-    }
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>페이지 전환</title>
+    <style>
+        .page {
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+    </style>
 </head>
 <body>
-  <header class="header">
-    <h1>Logo</h1>
-    <nav class="nav" id="nav">
-      <a href="#">Home</a>
-      <a href="#">About</a>
-      <a href="#">Services</a>
-      <a href="#">Contact</a>
-    </nav>
-    <div class="menu-toggle" id="menu-toggle">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  </header>
 
-<script>
-  const menuToggle = document.getElementById('menu-toggle');
-  const nav = document.getElementById('nav');
-  
-  menuToggle.addEventListener('click', () => {
-    nav.classList.toggle('active');
-  });
-</script>
+    <div id="page1" class="page active">
+        <h1>페이지 1</h1>
+        <p>이것은 첫 번째 페이지입니다.</p>
+        <button onclick="showPage('page2')">2페이지로 가기</button>
+    </div>
+
+    <div id="page2" class="page">
+        <h1>페이지 2</h1>
+        <p>이것은 두 번째 페이지입니다.</p>
+        <button onclick="showPage('page1')">1페이지로 돌아가기</button>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            // 모든 페이지 숨기기
+            document.querySelectorAll('.page').forEach(function(page) {
+                page.classList.remove('active');
+            });
+
+            // 선택된 페이지 표시
+            document.getElementById(pageId).classList.add('active');
+        }
+    </script>
+    
 </body>
 </html>

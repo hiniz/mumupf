@@ -13,6 +13,7 @@ html {
 a {
     text-decoration: none;
     color: #222;
+    
 }
 
 img {
@@ -330,6 +331,13 @@ main {
 
 .review-down {
     justify-content: end;
+}
+
+#topBtn {
+    display: flex;
+    position: fixed;
+    bottom: 100px;
+    right: 100px;
 }
 
 #footer {
