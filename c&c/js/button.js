@@ -18,3 +18,23 @@ const scroll = () => {
 }
 
 upBtn.addEventListener('click', scroll);
+
+
+const visibleBtn = document.querySelector('.search-button')
+const visibleContent = document.querySelector('.search-box')
+visibleBtn.addEventListener('click', ()=> {
+    visibleContent.classList.toggle('active')
+
+})
+
+
+
+
+const backBtn = document.querySelectorAll('.reset-button');
+const backWrapper = document.querySelectorAll('.back-wrapper')
+
+backBtn.forEach((button, index) => {
+        button.addEventListener('click', ()=> {
+        backWrapper[index].style.transform = 'translateX(0px)';
+    });
+});

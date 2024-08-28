@@ -10,9 +10,19 @@
 <body>
     <header>
         <div class="header-container">
+
+            <div class="search-box">
+                <form class="input-box">
+                    <input type="text" class="search-input" onmouseout="this.value = ''; this.blur();">
+                    <figure class="search-icon"><img src="../c&c/img/searchBrown.png" alt="sB"></figure>
+                </form>
+            </div>
+
+
             <div class="logo-container">
                 Celeste & Co.
             </div>
+            
             <div class="menu-container">
                 <ul class="categories">
                     <li class="category"><a href="#">shop</a></li>
@@ -21,9 +31,19 @@
                     <li class="category"><a href="#">about</a></li>
                 </ul>
                 <ul class="user-menu-list">
-                    <li class="user-menu"><figure class="user-icon"><img src="../c&c/img/cart.png" alt="cart"></figure></li>
-                    <li class="user-menu"><figure class="user-icon"><img src="../c&c/img/search.png" alt="search"></figure></li>
-                    <li class="user-menu"><figure class="user-icon"><img src="../c&c/img/user.png" alt="user"></figure></li>
+                    <li class="user-menu">
+                        <button class="user-button">
+                            <figure class="user-icon"><img src="../c&c/img/cart.png" alt="cart"></figure></li>
+                        </button>
+                    <li class="user-menu">
+                        <button class="user-button search-button">
+                            <figure class="user-icon"><img src="../c&c/img/search.png" alt="search"></figure>
+                        </button>
+                    </li>
+                    <li class="user-menu">
+                        <button class="user-button">
+                            <figure class="user-icon"><img src="../c&c/img/user.png" alt="user"></figure></li>
+                        </button>
                 </ul>
             </div>
         </div>
@@ -78,11 +98,11 @@
                 <p>가장 인기있는 아이템</p>
             </div>
             <div class="bestseller-contents">
-                <div class="slide-wrapper bestseller-wrapper">
+                <div class="slide-wrapper back-wrapper">
                     <ul class="best-slides">
                         <li class="slide best-slide">
-                                <a href="#">
-                                <div class="bestsller-content">
+                            <a href="#">
+                                    <div class="bestsller-content">
                                     <figure class="bestseller-img"><img src="../c&c/img/clnn001.png" alt="clnn001"></figure>
                                     <div class="bestseller-name">
                                         <p>CLN-N001</p>
@@ -136,7 +156,9 @@
                             </a>
                             </li>
                         <li class="slide best-slide best-button">
-                            <button class="reset-button">처음으로</button>
+                            <button class="reset-button">
+                                <figure class="arrow-button"><img src="../c&c/img/leftarrow.png" alt="leftarrow"></figure>
+                            </button>
                         </li> 
                         </ul>
                     </div>
@@ -150,52 +172,56 @@
                 <h2>daily set</h2>
                 <p>심플한 디자인으로 데일리하게 착용하기 좋은 조합</p>
             </div> 
-                <ul class="daily-set-contents slide-wrapper">
-                    <li class="daily-set-content slide">
-                        <a href="#">
-                            <figure class="daily-img"><img src="../c&c/img/setCln09.png" alt="setCln09"></figure>
-                            <p>SET-CLN09</p>
+                <div class="back-wrapper">
+                    <ul class="daily-set-contents slide-wrapper">
+                        <li class="daily-set-content slide">
+                            <a href="#">
+                                <figure class="daily-img"><img src="../c&c/img/setCln09.png" alt="setCln09"></figure>
+                                <p>SET-CLN09</p>
+                            </a>
+                        </li>
+                        <li class="daily-set-content slide">
+                            <a href="#">
+                                <figure class="daily-img"><img src="../c&c/img/setBasic08.png" alt="setBasic08"></figure>
+                                <p>SET-BASIC08</p>
+                            </a>
+                        </li>
+                        <li class="daily-set-content slide">
+                            <a href="#">
+                                <figure class="daily-img"><img src="../c&c/img/setDay001.png" alt="setDay001"></figure>
+                                <p>SET-DAY001</p>
                         </a>
-                    </li>
-                    <li class="daily-set-content slide">
-                        <a href="#">
-                            <figure class="daily-img"><img src="../c&c/img/setBasic08.png" alt="setBasic08"></figure>
-                            <p>SET-BASIC08</p>
-                        </a>
-                    </li>
-                    <li class="daily-set-content slide">
-                        <a href="#">
-                            <figure class="daily-img"><img src="../c&c/img/setDay001.png" alt="setDay001"></figure>
-                            <p>SET-DAY001</p>
-                        </a>
-                    </li>
-                    <li class="daily-set-content slide">
-                        <a href="#">
-                            <figure class="daily-img"><img src="../c&c/img/setDay002.png" alt="SET-DAY002"></figure>
-                            <p>SET-DAY002</p>
-                        </a>
-                    </li>
-                    <li class="daily-set-content slide">
-                        <a href="#">
-                            <figure class="daily-img"><img src="../c&c/img/setDay006.png" alt="setDay006"></figure>
-                            <p>SET-DAY006</p>
-                        </a>
-                    </li>
-                    <li class="slide daily-set-content best-button">
-                        <button class="reset-button">처음으로</button>
-                    </li> 
-                </ul>
+                        </li>
+                        <li class="daily-set-content slide">
+                            <a href="#">
+                                <figure class="daily-img"><img src="../c&c/img/setDay002.png" alt="SET-DAY002"></figure>
+                                <p>SET-DAY002</p>
+                            </a>
+                        </li>
+                        <li class="daily-set-content slide">
+                            <a href="#">
+                                <figure class="daily-img"><img src="../c&c/img/setDay006.png" alt="setDay006"></figure>
+                                <p>SET-DAY006</p>
+                            </a>
+                        </li>
+                        <li class="slide daily-set-content best-button">
+                            <button class="reset-button">
+                                <figure class="arrow-button"><img src="../c&c/img/leftarrow.png" alt="leftarrow"></figure>
+                            </button>
+                        </li> 
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
-
+    
     <section id="our-slogan">
         <div class="slogan">
             <h2>Timeless Elegance, Crafted in Perfection</h2>
             <p>Celeste & Co. 는 당신의 모든 순간이 아름다울 수 있도록, 시간이 지나도 변하지 않는 우아함을 추구합니다.</p>
         </div>
         <div class="slogan-slide-wrapper">
-
+            
             <div class="slogan-slider">
                 <div class="slogan-slide"><img src="../c&c/img/slogan1.png" alt="slogan"></div>
                 <div class="slogan-slide"><img src="../c&c/img/slogan2.png" alt="slogan"></div>
@@ -349,5 +375,6 @@
     </footer>
     <script src="../c&c/js/swipe.js"></script>
     <script src="../c&c/js/button.js"></script>
+    <script src="../c&c/js/scroll.js"></script>
 </body>
 </html>
