@@ -3,48 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/reset.css">
+    <title>Page Switcher</title>
     <style>
-        .search-box {
-            width: 100%;
-            height: 150px;
-            background-color: pink;
-            opacity: .5;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .input-box {
-            position: relative;
-        }
-        .search-input {
-            width: 650px;
-            height: 50px;
-            border-radius: 50px;
-            border: none;
-            padding: 12px 50px;
-            box-sizing: border-box;
-            outline: none;
-            font-size: 18px;
+        .page{
+            display: none;
         }
 
-        .sarch-icon {
-            position: absolute;
-            top: 12px;
-            right: 16px;
-            z-index: 5;
+        .page img {
+            width: 500px;
+        }
+
+        .active {
+            display: flex;
+            flex-direction: column;
         }
     </style>
 </head>
-<body>
-    <div class="search-box">
-        <form class="input-box">
 
-            <input type="text" class="search-input" onmouseout="this.value = ''; this.blur();">
-            <figure class="sarch-icon"><img src="/searchBrown.png" alt="icon"></figure>
-        </form>
-        
+
+
+
+
+
+
+
+<body>
+
+    <!-- 세트 new 페이지 전환을 위한 버튼들 -->
+    <div>
+        <button onclick="showPage('new', 'pageNew1')">New-1 페이지</button>
+        <button onclick="showPage('new', 'pageNew2')">New-2 페이지</button>
     </div>
+
+    <div id="new">
+        <div id="pageNew1" class="page active">
+            <h1>New-1 페이지</h1>
+            <p>이것은 New-1 페이지의 내용입니다.</p>
+        </div>
+
+        <div id="pageNew2" class="page">
+            <h1>New-2 페이지</h1>
+            <p>이것은 New-2 페이지의 내용입니다.</p>
+        </div>
+    </div>
+
+    <!-- 세트 best 페이지 전환을 위한 버튼들 -->
+    <div>
+        <button onclick="showPage('best', 'pageBest1')">Best-1 페이지</button>
+        <button onclick="showPage('best', 'pageBest2')">Best-2 페이지</button>
+    </div>
+
+    <div id="best">
+        <div id="pageBest1" class="page active">
+            <h1>Best-1 페이지</h1>
+            <p>이것은 Best-1 페이지의 내용입니다.</p>
+        </div>
+
+        <div id="pageBest2" class="page">
+            <h1>Best-2 페이지</h1>
+            <p>이것은 Best-2 페이지의 내용입니다.</p>
+        </div>
+    </div>
+
+    <!-- 세트 shop 페이지 전환을 위한 버튼들 -->
+    <div>
+        <button onclick="showPage('shop', 'pageShop1')">Shop-1 페이지</button>
+        <button onclick="showPage('shop', 'pageShop2')">Shop-2 페이지</button>
+    </div>
+
+    <div id="shop">
+        <div id="pageShop1" class="page active">
+            <h1>Shop-1 페이지</h1>
+            <p>이것은 Shop-1 페이지의 내용입니다.</p>
+        </div>
+
+        <div id="pageShop2" class="page">
+            <h1>Shop-2 페이지</h1>
+            <p>이것은 Shop-2 페이지의 내용입니다.</p>
+        </div>
+    </div>
+
+    <script>
+        function showPage(setId, pageId) {
+            // 특정 세트 내의 모든 페이지를 숨깁니다.
+            var pages = document.querySelectorAll('#' + setId + ' .page');
+            pages.forEach(function(page) {
+                page.classList.remove('active');
+            });
+
+            // 선택된 페이지를 활성화합니다.
+            var activePage = document.querySelector('#' + setId + ' #' + pageId);
+            if (activePage) {
+                activePage.classList.add('active');
+            } else {
+                console.error('Page with id ' + pageId + ' not found in set ' + setId);
+            }
+
+            // 페이지를 최상단으로 스크롤합니다.
+            window.scrollTo(0, 0);
+        }
+    </script>
+
 </body>
 </html>

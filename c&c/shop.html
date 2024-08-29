@@ -10,6 +10,14 @@
 <body>
     <header>
         <div class="header-container">
+            <div class="search-box">
+                <form class="input-box">
+                    <input type="text" class="search-input" onmouseout="this.value = ''; this.blur();">
+                    <figure class="search-icon"><img src="../c&c/img/searchBrown.png" alt="sB"></figure>
+                </form>
+            </div>
+
+
             <div class="logo-container">
                 Celeste & Co.
             </div>
@@ -21,10 +29,19 @@
                     <li class="category"><a href="#">about</a></li>
                 </ul>
                 <ul class="user-menu-list">
-                    <li class="user-menu"><figure class="user-icon"><img src="../c&c/img/cartBrown.png" alt="cart"></figure></li>
-                    <li class="user-menu search-box">        
-                        <figure class="user-icon search-icon"><img src="../c&c/img/searchBrown.png" alt="search"></figure></li>
-                    <li class="user-menu"><figure class="user-icon"><img src="../c&c/img/userBrown.png" alt="user"></figure></li>
+                    <li class="user-menu">
+                        <button class="user-button">
+                            <figure class="user-icon"><img src="../c&c/img/cartBrown.png" alt="cart"></figure></li>
+                        </button>
+                    <li class="user-menu">
+                        <button class="user-button search-button">
+                            <figure class="user-icon"><img src="../c&c/img/searchBrown.png" alt="search"></figure>
+                        </button>
+                    </li>
+                    <li class="user-menu">
+                        <button class="user-button">
+                            <figure class="user-icon"><img src="../c&c/img/userBrown.png" alt="user"></figure></li>
+                        </button>
                 </ul>
             </div>
         </div>
@@ -43,7 +60,6 @@
                 <li class="shop-category"><button class="category-button" data-tab="necklace">Necklaces</button></li>
                 <li class="shop-category"><button class="category-button" data-tab="set">Sets</button></li>
                 <li class="shop-category"><button class="category-button" data-tab="couple">Couple items</button></li>
-                <li class="shop-category"><button class="category-button" data-tab="gift">Gifts</button></li>
                 <li class="shop-category"><button class="category-button" data-tab="special">Special price</button></li>
             </ul>
         </nav>
@@ -53,14 +69,16 @@
             <div class="products-nav">
                 <h2>New</h2>
                 <select id="sort">
-                    <option>낮은가격순</option>
-                    <option>높은가격순</option>
-                    <option>최신순</option>
-                    <option>인기순</option>
-                    <option>리뷰많은순</option>
+                    <option class="option">낮은가격순</option>
+                    <option class="option">높은가격순</option>
+                    <option class="option">최신순</option>
+                    <option class="option">인기순</option>
+                    <option class="option">리뷰많은순</option>
                 </select>
             </div>
-            <div class="products page" id="page1">
+
+            <div id="newPage">
+                <div  id="pageNew1" class="products page active">
                     <div class="product">
                         <figure class="product-img"><img src="../c&c/img/products/new001.png" alt="new"></figure>
                         <div class="product-info">
@@ -91,46 +109,113 @@
                     </div>
                     <div class="product">
                         <figure class="product-img"><img src="../c&c/img/products/new005.png" alt="new"></figure>
-                    <div class="product-info">
-                        <p>new-RIG001</p>
-                        <p>46,000원</p>
+                        <div class="product-info">
+                            <p>new-RIG001</p>
+                            <p>46,000원</p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/new006.png" alt="new"></figure>
+                        <div class="product-info">
+                            <p>new-SUM001</p>
+                            <p>12,000원</p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/new007.png" alt="new"></figure>
+                        <div class="product-info">
+                            <p>new-SUM002</p>
+                            <p>118,000원</p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/new008.png" alt="new"></figure>
+                        <div class="product-info">
+                            <p>new-DAL004</p>
+                            <p>96,000원</p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/new009.png" alt="new"></figure>
+                        <div class="product-info">
+                            <p>BRA-DAL005</p>
+                            <p>36,000원</p>
+                        </div>
                     </div>
                 </div>
-                <div class="product">
-                    <figure class="product-img"><img src="../c&c/img/products/new006.png" alt="new"></figure>
-                    <div class="product-info">
-                        <p>new-SUM001</p>
-                        <p>12,000원</p>
+                <div id="pageNew2" class="products page">
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/new001.png" alt="new"></figure>
+                        <div class="product-info">
+                            <p>두번째 페이지임</p>
+                            <p>28,000원</p>
+                        </div>
                     </div>
-                </div>
-                <div class="product">
-                    <figure class="product-img"><img src="../c&c/img/products/new007.png" alt="new"></figure>
-                    <div class="product-info">
-                        <p>new-SUM002</p>
-                        <p>118,000원</p>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/new002.png" alt="new"></figure>
+                        <div class="product-info">
+                            <p>new-DAL002</p>
+                            <p>13,000원</p>
+                        </div>
                     </div>
-                </div>
-                <div class="product">
-                    <figure class="product-img"><img src="../c&c/img/products/new008.png" alt="new"></figure>
-                    <div class="product-info">
-                        <p>new-DAL004</p>
-                        <p>96,000원</p>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/new003.png" alt="new"></figure>
+                        <div class="product-info">
+                            <p>new-LIN001</p>
+                            <p>65,000원</p>
+                        </div>
                     </div>
-                </div>
-                <div class="product">
-                    <figure class="product-img"><img src="../c&c/img/products/new009.png" alt="new"></figure>
-                    <div class="product-info">
-                        <p>BRA-DAL005</p>
-                        <p>36,000원</p>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/new004.png" alt="new"></figure>
+                        <div class="product-info">
+                            <p>new-DAL003</p>
+                            <p>23,000원</p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/new005.png" alt="new"></figure>
+                        <div class="product-info">
+                            <p>new-RIG001</p>
+                            <p>46,000원</p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/new006.png" alt="new"></figure>
+                        <div class="product-info">
+                            <p>new-SUM001</p>
+                            <p>12,000원</p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/new007.png" alt="new"></figure>
+                        <div class="product-info">
+                            <p>new-SUM002</p>
+                            <p>118,000원</p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/new008.png" alt="new"></figure>
+                        <div class="product-info">
+                            <p>new-DAL004</p>
+                            <p>96,000원</p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/new009.png" alt="new"></figure>
+                        <div class="product-info">
+                            <p>BRA-DAL005</p>
+                            <p>36,000원</p>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="page-button-box">
-                <button class="page-button">1</button>
-                <button class="page-button">2</button>
-            </div> 
+                <button class="page-button" onclick="showPage('newPage', 'pageNew1')">1</button>
+                <button class="page-button" onclick="showPage('newPage', 'pageNew2')">2</button>
+            </div>       
         </div>
-
+    
+    
         <div class="products-container" id="best">
             <div class="products-nav">
                 <h2>Best</h2>
@@ -142,7 +227,8 @@
                     <option>리뷰많은순</option>
                 </select>
             </div>
-            <div class="products page" id="page1">
+            <div id="bestPage">
+                <div id="pageBest1" class="products page active">
                     <div class="product">
                         <figure class="product-img"><img src="../c&c/img/products/best001.png" alt="best"></figure>
                         <div class="product-info">
@@ -173,45 +259,112 @@
                     </div>
                     <div class="product">
                         <figure class="product-img"><img src="../c&c/img/products/best005.png" alt="best"></figure>
-                    <div class="product-info">
-                        <p>best-RIG001</p>
-                        <p>46,000원</p>
+                        <div class="product-info">
+                            <p>best-RIG001</p>
+                            <p>46,000원</p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/best006.png" alt="best"></figure>
+                        <div class="product-info">
+                            <p>best-SUM001</p>
+                            <p>12,000원</p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/best007.png" alt="best"></figure>
+                        <div class="product-info">
+                            <p>best-SUM002</p>
+                            <p>118,000원</p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/best008.png" alt="best"></figure>
+                        <div class="product-info">
+                            <p>best-DAL004</p>
+                            <p>96,000원</p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/best009.png" alt="best"></figure>
+                        <div class="product-info">
+                            <p>BRA-DAL005</p>
+                            <p>36,000원</p>
+                        </div>
                     </div>
                 </div>
-                <div class="product">
-                    <figure class="product-img"><img src="../c&c/img/products/best006.png" alt="best"></figure>
-                    <div class="product-info">
-                        <p>best-SUM001</p>
-                        <p>12,000원</p>
+                <div id="pageBest2" class="products page">
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/best001.png" alt="best"></figure>
+                        <div class="product-info">
+                            <p>두번째임</p>
+                            <p>28,000원</p>
+                        </div>
                     </div>
-                </div>
-                <div class="product">
-                    <figure class="product-img"><img src="../c&c/img/products/best007.png" alt="best"></figure>
-                    <div class="product-info">
-                        <p>best-SUM002</p>
-                        <p>118,000원</p>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/best002.png" alt="best"></figure>
+                        <div class="product-info">
+                            <p>best-DAL002</p>
+                            <p>13,000원</p>
+                        </div>
                     </div>
-                </div>
-                <div class="product">
-                    <figure class="product-img"><img src="../c&c/img/products/best008.png" alt="best"></figure>
-                    <div class="product-info">
-                        <p>best-DAL004</p>
-                        <p>96,000원</p>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/best003.png" alt="best"></figure>
+                        <div class="product-info">
+                            <p>best-LIN001</p>
+                            <p>65,000원</p>
+                        </div>
                     </div>
-                </div>
-                <div class="product">
-                    <figure class="product-img"><img src="../c&c/img/products/best009.png" alt="best"></figure>
-                    <div class="product-info">
-                        <p>BRA-DAL005</p>
-                        <p>36,000원</p>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/best004.png" alt="best"></figure>
+                        <div class="product-info">
+                            <p>best-DAL003</p>
+                            <p>23,000원</p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/best005.png" alt="best"></figure>
+                        <div class="product-info">
+                            <p>best-RIG001</p>
+                            <p>46,000원</p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/best006.png" alt="best"></figure>
+                        <div class="product-info">
+                            <p>best-SUM001</p>
+                            <p>12,000원</p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/best007.png" alt="best"></figure>
+                        <div class="product-info">
+                            <p>best-SUM002</p>
+                            <p>118,000원</p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/best008.png" alt="best"></figure>
+                        <div class="product-info">
+                            <p>best-DAL004</p>
+                            <p>96,000원</p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/best009.png" alt="best"></figure>
+                        <div class="product-info">
+                            <p>BRA-DAL005</p>
+                            <p>36,000원</p>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="page-button-box">
-                <button class="page-button">1</button>
-                <button class="page-button">2</button>
+                <button class="page-button" onclick="showPage('bestPage', 'pageBest1')">1</button>
+                <button class="page-button" onclick="showPage('bestPage', 'pageBest2')">2</button>
             </div> 
         </div>
+
 
 
         <div class="products-container" id="bracelet">
@@ -225,11 +378,77 @@
                     <option>리뷰많은순</option>
                 </select>
             </div>
-            <div class="products page" id="page1">
+            <div id="braPage">
+                <div id="pageBra1" class="products page active">
                     <div class="product">
                         <figure class="product-img"><img src="../c&c/img/products/bra001.png" alt="bra"></figure>
                         <div class="product-info">
                             <p>BRA-DAL001</p>
+                            <p>28,000원</p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/bra002.png" alt="bra"></figure>
+                        <div class="product-info">
+                            <p>BRA-DAL002</p>
+                            <p>13,000원</p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/bra003.png" alt="bra"></figure>
+                        <div class="product-info">
+                            <p>BRA-LIN001</p>
+                            <p>65,000원</p>
+                        </div>
+                    </div>
+                        <div class="product">
+                            <figure class="product-img"><img src="../c&c/img/products/bra004.png" alt="bra"></figure>
+                            <div class="product-info">
+                                <p>BRA-DAL003</p>
+                                <p>23,000원</p>
+                            </div>
+                        </div>
+                        <div class="product">
+                            <figure class="product-img"><img src="../c&c/img/products/bra005.png" alt="bra"></figure>
+                        <div class="product-info">
+                            <p>BRA-RIG001</p>
+                            <p>46,000원</p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/bra006.png" alt="bra"></figure>
+                        <div class="product-info">
+                            <p>BRA-SUM001</p>
+                            <p>12,000원</p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/bra007.png" alt="bra"></figure>
+                        <div class="product-info">
+                            <p>BRA-SUM002</p>
+                            <p>118,000원</p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/bra008.png" alt="bra"></figure>
+                        <div class="product-info">
+                            <p>BRA-DAL004</p>
+                            <p>96,000원</p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/bra009.png" alt="bra"></figure>
+                        <div class="product-info">
+                            <p>BRA-DAL005</p>
+                            <p>36,000원</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="pageBra2" class="products page">
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/bra001.png" alt="bra"></figure>
+                        <div class="product-info">
+                            <p>두번짼뎅ㅋ-DAL001</p>
                             <p>28,000원</p>
                         </div>
                     </div>
@@ -256,45 +475,53 @@
                     </div>
                     <div class="product">
                         <figure class="product-img"><img src="../c&c/img/products/bra005.png" alt="bra"></figure>
-                    <div class="product-info">
-                        <p>BRA-RIG001</p>
-                        <p>46,000원</p>
+                        <div class="product-info">
+                            <p>BRA-RIG001</p>
+                            <p>46,000원</p>
+                        </div>
                     </div>
-                </div>
-                <div class="product">
-                    <figure class="product-img"><img src="../c&c/img/products/bra006.png" alt="bra"></figure>
-                    <div class="product-info">
-                        <p>BRA-SUM001</p>
-                        <p>12,000원</p>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/bra006.png" alt="bra"></figure>
+                        <div class="product-info">
+                            <p>BRA-SUM001</p>
+                            <p>12,000원</p>
+                        </div>
                     </div>
-                </div>
-                <div class="product">
-                    <figure class="product-img"><img src="../c&c/img/products/bra007.png" alt="bra"></figure>
-                    <div class="product-info">
-                        <p>BRA-SUM002</p>
-                        <p>118,000원</p>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/bra007.png" alt="bra"></figure>
+                        <div class="product-info">
+                            <p>BRA-SUM002</p>
+                            <p>118,000원</p>
+                        </div>
                     </div>
-                </div>
-                <div class="product">
-                    <figure class="product-img"><img src="../c&c/img/products/bra008.png" alt="bra"></figure>
-                    <div class="product-info">
-                        <p>BRA-DAL004</p>
-                        <p>96,000원</p>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/bra008.png" alt="bra"></figure>
+                        <div class="product-info">
+                            <p>BRA-DAL004</p>
+                            <p>96,000원</p>
+                        </div>
                     </div>
-                </div>
-                <div class="product">
-                    <figure class="product-img"><img src="../c&c/img/products/bra009.png" alt="bra"></figure>
-                    <div class="product-info">
-                        <p>BRA-DAL005</p>
-                        <p>36,000원</p>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/bra009.png" alt="bra"></figure>
+                        <div class="product-info">
+                            <p>BRA-DAL005</p>
+                            <p>36,000원</p>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="page-button-box">
-                <button class="page-button">1</button>
-                <button class="page-button">2</button>
+                <button class="page-button" onclick="showPage('braPage', 'pageBra1')">1</button>
+                <button class="page-button" onclick="showPage('braPage', 'pageBra2')">2</button>
             </div> 
         </div>
+
+
+
+
+
+
+
         <div class="products-container" id="ring">
             <div class="products-nav">
                 <h2>Rings</h2>
@@ -306,7 +533,10 @@
                     <option>리뷰많은순</option>
                 </select>
             </div>
-            <div class="products page" id="page1">
+
+
+            <div id="ringPage">
+                <div id="pageRing1" class="products page active">
                     <div class="product">
                         <figure class="product-img"><img src="../c&c/img/products/ring001.png" alt="ring"></figure>
                         <div class="product-info">
@@ -337,45 +567,114 @@
                     </div>
                     <div class="product">
                         <figure class="product-img"><img src="../c&c/img/products/ring005.png" alt="ring"></figure>
-                    <div class="product-info">
-                        <p>RNG-SIM005</p>
-                        <p>9900원</p>
+                        <div class="product-info">
+                            <p>RNG-SIM005</p>
+                            <p>9900원</p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/ring006.png" alt="ring"></figure>
+                        <div class="product-info">
+                            <p>RNG-SIM006</p>
+                            <p>9900원</p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/ring007.png" alt="ring"></figure>
+                        <div class="product-info">
+                            <p>RNG-SIM007</p>
+                            <p>9900원</p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/ring008.png" alt="ring"></figure>
+                        <div class="product-info">
+                            <p>RNG-SIM008</p>
+                            <p>9900원</p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/ring009.png" alt="ring"></figure>
+                        <div class="product-info">
+                            <p>RNG-SIM009</p>
+                            <p>9900원</p>
+                        </div>
                     </div>
                 </div>
-                <div class="product">
-                    <figure class="product-img"><img src="../c&c/img/products/ring006.png" alt="ring"></figure>
-                    <div class="product-info">
-                        <p>RNG-SIM006</p>
-                        <p>9900원</p>
+                <div id="pageRing2" class="products page">
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/ring001.png" alt="ring"></figure>
+                        <div class="product-info">
+                            <p>2페이지지롱</p>
+                            <p>9900원</p>
+                        </div>
                     </div>
-                </div>
-                <div class="product">
-                    <figure class="product-img"><img src="../c&c/img/products/ring007.png" alt="ring"></figure>
-                    <div class="product-info">
-                        <p>RNG-SIM007</p>
-                        <p>9900원</p>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/ring002.png" alt="ring"></figure>
+                        <div class="product-info">
+                            <p>RNG-SIM002</p>
+                            <p>9900원</p>
+                        </div>
                     </div>
-                </div>
-                <div class="product">
-                    <figure class="product-img"><img src="../c&c/img/products/ring008.png" alt="ring"></figure>
-                    <div class="product-info">
-                        <p>RNG-SIM008</p>
-                        <p>9900원</p>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/ring003.png" alt="ring"></figure>
+                        <div class="product-info">
+                            <p>RNG-SIM003</p>
+                            <p>9900원</p>
+                        </div>
                     </div>
-                </div>
-                <div class="product">
-                    <figure class="product-img"><img src="../c&c/img/products/ring009.png" alt="ring"></figure>
-                    <div class="product-info">
-                        <p>RNG-SIM009</p>
-                        <p>9900원</p>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/ring004.png" alt="ring"></figure>
+                        <div class="product-info">
+                            <p>RNG-SIM004</p>
+                            <p>9900원</p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/ring005.png" alt="ring"></figure>
+                        <div class="product-info">
+                            <p>RNG-SIM005</p>
+                            <p>9900원</p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/ring006.png" alt="ring"></figure>
+                        <div class="product-info">
+                            <p>RNG-SIM006</p>
+                            <p>9900원</p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/ring007.png" alt="ring"></figure>
+                        <div class="product-info">
+                            <p>RNG-SIM007</p>
+                            <p>9900원</p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/ring008.png" alt="ring"></figure>
+                        <div class="product-info">
+                            <p>RNG-SIM008</p>
+                            <p>9900원</p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/ring009.png" alt="ring"></figure>
+                        <div class="product-info">
+                            <p>RNG-SIM009</p>
+                            <p>9900원</p>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="page-button-box">
-                <button class="page-button">1</button>
-                <button class="page-button">2</button>
+                <button class="page-button" onclick="showPage('ringPage', 'pageRing1')">1</button>
+                <button class="page-button" onclick="showPage('ringPage', 'pageRing2')">2</button>
             </div>
         </div>
+
+
+
         <div class="products-container" id="earring">
             <div class="products-nav">
                 <h2>Earrings</h2>
@@ -387,7 +686,9 @@
                     <option>리뷰많은순</option>
                 </select>
             </div>
-            <div class="products page" id="page1">
+
+            <div id="earPage">
+                <div id="pageEar1" class="products page active">
                     <div class="product">
                         <figure class="product-img"><img src="../c&c/img/products/ear001.png" alt="ear"></figure>
                         <div class="product-info">
@@ -418,45 +719,116 @@
                     </div>
                     <div class="product">
                         <figure class="product-img"><img src="../c&c/img/products/ear005.png" alt="ear"></figure>
-                    <div class="product-info">
-                        <p>EAR-HRT002</p>
-                        <p>46,000원</p>
+                        <div class="product-info">
+                            <p>EAR-HRT002</p>
+                            <p>46,000원</p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/ear006.png" alt="ear"></figure>
+                        <div class="product-info">
+                            <p>EAR-DAL001</p>
+                            <p>12,000원</p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/ear007.png" alt="ear"></figure>
+                        <div class="product-info">
+                            <p>EAR-DAL002</p>
+                            <p>118,000원</p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/ear008.png" alt="ear"></figure>
+                        <div class="product-info">
+                            <p>EAR-DAL003</p>
+                            <p>96,000원</p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/ear009.png" alt="ear"></figure>
+                        <div class="product-info">
+                            <p>EAR-DAL004</p>
+                            <p>36,000원</p>
+                        </div>
                     </div>
                 </div>
-                <div class="product">
-                    <figure class="product-img"><img src="../c&c/img/products/ear006.png" alt="ear"></figure>
-                    <div class="product-info">
-                        <p>EAR-DAL001</p>
-                        <p>12,000원</p>
+                <div id="pageEar2" class="products page">
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/ear001.png" alt="ear"></figure>
+                        <div class="product-info">
+                            <p>E22222222222221</p>
+                            <p>28,000원</p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/ear002.png" alt="ear"></figure>
+                        <div class="product-info">
+                            <p>EAR-RIB002</p>
+                            <p>13,000원</p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/ear003.png" alt="ear"></figure>
+                        <div class="product-info">
+                            <p>EAR-HRT001</p>
+                            <p>65,000원</p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/ear004.png" alt="ear"></figure>
+                        <div class="product-info">
+                            <p>EAR-RIB003</p>
+                            <p>23,000원</p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/ear005.png" alt="ear"></figure>
+                        <div class="product-info">
+                            <p>EAR-HRT002</p>
+                            <p>46,000원</p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/ear006.png" alt="ear"></figure>
+                        <div class="product-info">
+                            <p>EAR-DAL001</p>
+                            <p>12,000원</p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/ear007.png" alt="ear"></figure>
+                        <div class="product-info">
+                            <p>EAR-DAL002</p>
+                            <p>118,000원</p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/ear008.png" alt="ear"></figure>
+                        <div class="product-info">
+                            <p>EAR-DAL003</p>
+                            <p>96,000원</p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/ear009.png" alt="ear"></figure>
+                        <div class="product-info">
+                            <p>EAR-DAL004</p>
+                            <p>36,000원</p>
+                        </div>
                     </div>
                 </div>
-                <div class="product">
-                    <figure class="product-img"><img src="../c&c/img/products/ear007.png" alt="ear"></figure>
-                    <div class="product-info">
-                        <p>EAR-DAL002</p>
-                        <p>118,000원</p>
-                    </div>
-                </div>
-                <div class="product">
-                    <figure class="product-img"><img src="../c&c/img/products/ear008.png" alt="ear"></figure>
-                    <div class="product-info">
-                        <p>EAR-DAL003</p>
-                        <p>96,000원</p>
-                    </div>
-                </div>
-                <div class="product">
-                    <figure class="product-img"><img src="../c&c/img/products/ear009.png" alt="ear"></figure>
-                    <div class="product-info">
-                        <p>EAR-DAL004</p>
-                        <p>36,000원</p>
-                    </div>
-                </div>
+
             </div>
             <div class="page-button-box">
-                <button class="page-button">1</button>
-                <button class="page-button">2</button>
+                <button class="page-button" onclick="showPage('earPage', 'pageEar1')">1</button>
+                <button class="page-button" onclick="showPage('earPage', 'pageEar2')">2</button>
             </div>
         </div>
+
+
+
+        
         <div class="products-container" id="necklace">
             <div class="products-nav">
                 <h2>Necklaces</h2>
@@ -468,7 +840,9 @@
                     <option>리뷰많은순</option>
                 </select>
             </div>
-            <div class="products page" id="page1">
+
+            <div id="neckPage">
+                <div id="pageNeck1" class="products page active">
                     <div class="product">
                         <figure class="product-img"><img src="../c&c/img/products/neck001.png" alt="neck"></figure>
                         <div class="product-info">
@@ -499,45 +873,116 @@
                     </div>
                     <div class="product">
                         <figure class="product-img"><img src="../c&c/img/products/neck005.png" alt="neck"></figure>
-                    <div class="product-info">
-                        <p>NEK-RIB002</p>
-                        <p>46,000원</p>
+                        <div class="product-info">
+                            <p>NEK-RIB002</p>
+                            <p>46,000원</p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/neck006.png" alt="neck"></figure>
+                        <div class="product-info">
+                            <p>NEK-RIB003</p>
+                            <p>12,000원</p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/neck007.png" alt="neck"></figure>
+                        <div class="product-info">
+                            <p>NEK-LIN001</p>
+                            <p>118,000원</p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/neck008.png" alt="neck"></figure>
+                        <div class="product-info">
+                            <p>NEK-LIN002</p>
+                            <p>96,000원</p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/neck009.png" alt="neck"></figure>
+                        <div class="product-info">
+                            <p>NEK-SIM001</p>
+                            <p>36,000원</p>
+                        </div>
                     </div>
                 </div>
-                <div class="product">
-                    <figure class="product-img"><img src="../c&c/img/products/neck006.png" alt="neck"></figure>
-                    <div class="product-info">
-                        <p>NEK-RIB003</p>
-                        <p>12,000원</p>
+                <div id="pageNeck2" class="products page">
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/neck001.png" alt="neck"></figure>
+                        <div class="product-info">
+                            <p>NE2222222222222222</p>
+                            <p>28,000원</p>
+                        </div>
                     </div>
-                </div>
-                <div class="product">
-                    <figure class="product-img"><img src="../c&c/img/products/neck007.png" alt="neck"></figure>
-                    <div class="product-info">
-                        <p>NEK-LIN001</p>
-                        <p>118,000원</p>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/neck002.png" alt="neck"></figure>
+                        <div class="product-info">
+                            <p>NEK-HRT002</p>
+                            <p>13,000원</p>
+                        </div>
                     </div>
-                </div>
-                <div class="product">
-                    <figure class="product-img"><img src="../c&c/img/products/neck008.png" alt="neck"></figure>
-                    <div class="product-info">
-                        <p>NEK-LIN002</p>
-                        <p>96,000원</p>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/neck003.png" alt="neck"></figure>
+                        <div class="product-info">
+                            <p>NEK-HRT003</p>
+                            <p>65,000원</p>
+                        </div>
                     </div>
-                </div>
-                <div class="product">
-                    <figure class="product-img"><img src="../c&c/img/products/neck009.png" alt="neck"></figure>
-                    <div class="product-info">
-                        <p>NEK-SIM001</p>
-                        <p>36,000원</p>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/neck004.png" alt="neck"></figure>
+                        <div class="product-info">
+                            <p>NEK-RIB001</p>
+                            <p>23,000원</p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/neck005.png" alt="neck"></figure>
+                        <div class="product-info">
+                            <p>NEK-RIB002</p>
+                            <p>46,000원</p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/neck006.png" alt="neck"></figure>
+                        <div class="product-info">
+                            <p>NEK-RIB003</p>
+                            <p>12,000원</p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/neck007.png" alt="neck"></figure>
+                        <div class="product-info">
+                            <p>NEK-LIN001</p>
+                            <p>118,000원</p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/neck008.png" alt="neck"></figure>
+                        <div class="product-info">
+                            <p>NEK-LIN002</p>
+                            <p>96,000원</p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/neck009.png" alt="neck"></figure>
+                        <div class="product-info">
+                            <p>NEK-SIM001</p>
+                            <p>36,000원</p>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="page-button-box">
-                <button class="page-button">1</button>
-                <button class="page-button">2</button>
+                <button class="page-button" onclick="showPage('neckPage', 'pageNeck1')">1</button>
+                <button class="page-button" onclick="showPage('neckPage', 'pageNeck2')">2</button>
             </div> 
         </div>
+
+
+        
+
+        
         <div class="products-container" id="set">
             <div class="products-nav">
                 <h2>Sets</h2>
@@ -549,7 +994,9 @@
                     <option>리뷰많은순</option>
                 </select>
             </div>
-            <div class="products page" id="page1">
+
+            <div id="setPage">
+                <div id="pageSet1" class="products page active">
                     <div class="product">
                         <figure class="product-img"><img src="../c&c/img/products/set001.png" alt="set"></figure>
                         <div class="product-info">
@@ -566,11 +1013,11 @@
                     </div>
                     <div class="product">
                         <figure class="product-img"><img src="../c&c/img/products/set003.png" alt="set"></figure>
-                        <div class="product-info">
-                            <p>NEK-HRT003</p>
-                            <p>65,000원</p>
+                            <div class="product-info">
+                                <p>NEK-HRT003</p>
+                                <p>65,000원</p>
+                            </div>
                         </div>
-                    </div>
                     <div class="product">
                         <figure class="product-img"><img src="../c&c/img/products/set004.png" alt="set"></figure>
                         <div class="product-info">
@@ -580,6 +1027,71 @@
                     </div>
                     <div class="product">
                         <figure class="product-img"><img src="../c&c/img/products/set005.png" alt="set"></figure>
+                        <div class="product-info">
+                            <p>NEK-RIB002</p>
+                            <p>46,000원</p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/set006.png" alt="set"></figure>
+                        <div class="product-info">
+                            <p>NEK-RIB003</p>
+                            <p>12,000원</p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/set007.png" alt="set"></figure>
+                        <div class="product-info">
+                            <p>NEK-LIN001</p>
+                            <p>118,000원</p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <figure class="product-img"><img src="../c&c/img/products/set008.png" alt="set"></figure>
+                    <div class="product-info">
+                        <p>NEK-LIN002</p>
+                        <p>96,000원</p>
+                    </div>
+                </div>
+                <div class="product">
+                    <figure class="product-img"><img src="../c&c/img/products/set009.png" alt="set"></figure>
+                    <div class="product-info">
+                        <p>NEK-SIM001</p>
+                        <p>36,000원</p>
+                    </div>
+                </div>
+            </div>
+            <div id="pageSet2" class="products page">
+                <div class="product">
+                    <figure class="product-img"><img src="../c&c/img/products/set001.png" alt="set"></figure>
+                    <div class="product-info">
+                        <p>22222222222222222T001</p>
+                        <p>28,000원</p>
+                    </div>
+                </div>
+                <div class="product">
+                    <figure class="product-img"><img src="../c&c/img/products/set002.png" alt="set"></figure>
+                    <div class="product-info">
+                        <p>NEK-HRT002</p>
+                        <p>13,000원</p>
+                    </div>
+                </div>
+                <div class="product">
+                    <figure class="product-img"><img src="../c&c/img/products/set003.png" alt="set"></figure>
+                        <div class="product-info">
+                            <p>NEK-HRT003</p>
+                            <p>65,000원</p>
+                        </div>
+                    </div>
+                <div class="product">
+                    <figure class="product-img"><img src="../c&c/img/products/set004.png" alt="set"></figure>
+                    <div class="product-info">
+                        <p>NEK-RIB001</p>
+                        <p>23,000원</p>
+                    </div>
+                </div>
+                <div class="product">
+                    <figure class="product-img"><img src="../c&c/img/products/set005.png" alt="set"></figure>
                     <div class="product-info">
                         <p>NEK-RIB002</p>
                         <p>46,000원</p>
@@ -601,22 +1113,24 @@
                 </div>
                 <div class="product">
                     <figure class="product-img"><img src="../c&c/img/products/set008.png" alt="set"></figure>
-                    <div class="product-info">
-                        <p>NEK-LIN002</p>
-                        <p>96,000원</p>
-                    </div>
-                </div>
-                <div class="product">
-                    <figure class="product-img"><img src="../c&c/img/products/set009.png" alt="set"></figure>
-                    <div class="product-info">
-                        <p>NEK-SIM001</p>
-                        <p>36,000원</p>
-                    </div>
+                <div class="product-info">
+                    <p>NEK-LIN002</p>
+                    <p>96,000원</p>
                 </div>
             </div>
+            <div class="product">
+                <figure class="product-img"><img src="../c&c/img/products/set009.png" alt="set"></figure>
+                <div class="product-info">
+                    <p>NEK-SIM001</p>
+                    <p>36,000원</p>
+                </div>
+            </div>
+        </div>
+
+        </div>
             <div class="page-button-box">
-                <button class="page-button">1</button>
-                <button class="page-button">2</button>
+                <button class="page-button" onclick="showPage('setPage', 'pageSet1')">1</button>
+                <button class="page-button" onclick="showPage('setPage', 'pageSet2')">2</button>
             </div> 
         </div>
         <div class="products-container" id="couple">
@@ -696,10 +1210,10 @@
                 </div>
             </div>
             <div class="page-button-box">
-                <button class="page-button">1</button>
-                <button class="page-button">2</button>
+                <button class="page-button" onclick="showPage('page1')">1</button>
+                <button class="page-button" onclick="showPage('page2')">2</button>
             </div> 
-        </div>
+        </div> -->
 
 
 

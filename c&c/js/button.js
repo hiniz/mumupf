@@ -24,7 +24,6 @@ const visibleBtn = document.querySelector('.search-button')
 const visibleContent = document.querySelector('.search-box')
 visibleBtn.addEventListener('click', ()=> {
     visibleContent.classList.toggle('active')
-
 })
 
 
