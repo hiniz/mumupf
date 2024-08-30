@@ -29,11 +29,12 @@ visibleBtn.addEventListener('click', ()=> {
 
 
 
-const backBtn = document.querySelectorAll('.reset-button');
-const backWrapper = document.querySelectorAll('.back-wrapper')
 
-backBtn.forEach((button, index) => {
-        button.addEventListener('click', ()=> {
+const resetBtn = document.querySelectorAll('.reset-button');
+const backWrapper = document.querySelectorAll('.back-wrapper');
+
+resetBtn.forEach((button, index) => {
+    button.addEventListener('click', ()=> {
         backWrapper[index].style.transform = 'translateX(0px)';
     });
 });

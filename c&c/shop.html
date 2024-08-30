@@ -60,7 +60,6 @@
                 <li class="shop-category"><button class="category-button" data-tab="necklace">Necklaces</button></li>
                 <li class="shop-category"><button class="category-button" data-tab="set">Sets</button></li>
                 <li class="shop-category"><button class="category-button" data-tab="couple">Couple items</button></li>
-                <li class="shop-category"><button class="category-button" data-tab="special">Special price</button></li>
             </ul>
         </nav>
 
@@ -1133,6 +1132,10 @@
                 <button class="page-button" onclick="showPage('setPage', 'pageSet2')">2</button>
             </div> 
         </div>
+
+
+
+
         <div class="products-container" id="couple">
             <div class="products-nav">
                 <h2>Couple items</h2>
@@ -1144,7 +1147,11 @@
                     <option>리뷰많은순</option>
                 </select>
             </div>
-            <div class="products page" id="page1">
+
+
+            <div id="couplePage">
+
+                <div id="pageCouple1" class="products page active">
                     <div class="product">
                         <figure class="product-img"><img src="../c&c/img/products/couple001.png" alt="couple"></figure>
                         <div class="product-info">
@@ -1175,12 +1182,12 @@
                     </div>
                     <div class="product">
                         <figure class="product-img"><img src="../c&c/img/products/couple005.png" alt="couple"></figure>
-                    <div class="product-info">
-                        <p>NEK-RIB002</p>
-                        <p>46,000원</p>
+                        <div class="product-info">
+                            <p>NEK-RIB002</p>
+                            <p>46,000원</p>
+                        </div>
                     </div>
-                </div>
-                <div class="product">
+                    <div class="product">
                     <figure class="product-img"><img src="../c&c/img/products/couple006.png" alt="couple"></figure>
                     <div class="product-info">
                         <p>NEK-RIB003</p>
@@ -1209,11 +1216,89 @@
                     </div>
                 </div>
             </div>
+
+            <div id="pageCouple2" class="products page">
+                <div class="product">
+                    <figure class="product-img"><img src="../c&c/img/products/couple001.png" alt="couple"></figure>
+                    <div class="product-info">
+                        <p>NEK-HRT001</p>
+                        <p>28,000원</p>
+                    </div>
+                </div>
+                <div class="product">
+                    <figure class="product-img"><img src="../c&c/img/products/couple002.png" alt="couple"></figure>
+                    <div class="product-info">
+                        <p>NEK-HRT002</p>
+                        <p>13,000원</p>
+                    </div>
+                </div>
+                <div class="product">
+                    <figure class="product-img"><img src="../c&c/img/products/couple003.png" alt="couple"></figure>
+                    <div class="product-info">
+                        <p>NEK-HRT003</p>
+                        <p>65,000원</p>
+                    </div>
+                </div>
+                <div class="product">
+                    <figure class="product-img"><img src="../c&c/img/products/couple004.png" alt="couple"></figure>
+                    <div class="product-info">
+                        <p>NEK-RIB001</p>
+                        <p>23,000원</p>
+                    </div>
+                </div>
+                <div class="product">
+                    <figure class="product-img"><img src="../c&c/img/products/couple005.png" alt="couple"></figure>
+                    <div class="product-info">
+                        <p>NEK-RIB002</p>
+                        <p>46,000원</p>
+                    </div>
+                </div>
+                <div class="product">
+                <figure class="product-img"><img src="../c&c/img/products/couple006.png" alt="couple"></figure>
+                <div class="product-info">
+                    <p>NEK-RIB003</p>
+                    <p>12,000원</p>
+                </div>
+            </div>
+            <div class="product">
+                <figure class="product-img"><img src="../c&c/img/products/couple007.png" alt="couple"></figure>
+                <div class="product-info">
+                    <p>NEK-LIN001</p>
+                    <p>118,000원</p>
+                </div>
+            </div>
+            <div class="product">
+                <figure class="product-img"><img src="../c&c/img/products/couple008.png" alt="couple"></figure>
+                <div class="product-info">
+                    <p>NEK-LIN002</p>
+                    <p>96,000원</p>
+                </div>
+            </div>
+            <div class="product">
+                <figure class="product-img"><img src="../c&c/img/products/couple009.png" alt="couple"></figure>
+                <div class="product-info">
+                    <p>NEK-SIM001</p>
+                    <p>36,000원</p>
+                </div>
+            </div>
+        </div>
             <div class="page-button-box">
-                <button class="page-button" onclick="showPage('page1')">1</button>
-                <button class="page-button" onclick="showPage('page2')">2</button>
+                <button class="page-button" onclick="showPage('couplePage', 'pageCouple1')">1</button>
+                <button class="page-button" onclick="showPage('couplePage', 'pageCouple2')">2</button>
             </div> 
-        </div> -->
+        </div> 
+    </div>
+        
+        
+        
+
+
+
+
+
+
+
+
 
 
 
