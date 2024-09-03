@@ -193,7 +193,7 @@ header {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    justify-content: center;
+    justify-content: start;
 }
 
 .page {
@@ -205,7 +205,7 @@ header {
 }
 
 .product {
-    width: calc((100% - 200px) / 3);
+    width: 407px;
 }
 
 .product-img {
@@ -226,8 +226,13 @@ header {
 }
 
 .page-button {
-    color: #675553;
+    color: #A78B88;
     font-size: 18px;
+    margin-top: 100px;
+}
+
+.page-button.clicked {
+    color: #675553;
 }
 
 #our-slogan {

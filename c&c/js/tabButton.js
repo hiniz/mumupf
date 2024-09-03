@@ -31,6 +31,11 @@ function showPage(setId, pageId){
     }else {
         console.error(`Page with id` + pageId + `not found in set` + setId)
     }
+
     window.scrollTo(0, 0);
 
 }
+
+
+
+

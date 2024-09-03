@@ -38,3 +38,5 @@ resetBtn.forEach((button, index) => {
         backWrapper[index].style.transform = 'translateX(0px)';
     });
 });
+
+
