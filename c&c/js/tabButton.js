@@ -33,7 +33,6 @@ function showPage(setId, pageId){
     }
 
     window.scrollTo(0, 0);
-
 }
 
 
